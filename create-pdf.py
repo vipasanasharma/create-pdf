@@ -16,6 +16,8 @@ styles.add(ParagraphStyle(name='SectionText', fontSize=12, leading=14, spaceAfte
 story = []
 
 def add_section(title, text):
+    # Add colon to the title and make it bold
+    title = f'<b>{title}:</b>'
     story.append(Paragraph(title, styles['SectionTitle']))
     story.append(Paragraph(text, styles['SectionText']))
     story.append(Spacer(1, 12))  # Add space between sections
