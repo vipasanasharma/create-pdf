@@ -20,20 +20,22 @@ def add_section(title, text):
     story.append(Paragraph(text, styles['SectionText']))
     story.append(Spacer(1, 12))  # Add space between sections
 
-# Check if the JSON data is a dictionary or a list
-if isinstance(data, dict):
-    for key, value in data.items():
-        add_section(key, value)
-elif isinstance(data, list):
-    for section in data:
-        if isinstance(section, dict):
-            for key, value in section.items():
-                add_section(key, value)
-        else:
-            add_section("Section", str(section))
+def parse_json(data, level=0):
+    if isinstance(data, dict):
+        for key, value in data.items():
+            if isinstance(value, (dict, list)):
+                add_section(key, "")
+                parse_json(value, level + 1)
+            else:
+                add_section(key, str(value))
+    elif isinstance(data, list):
+        for item in data:
+            parse_json(item, level)
+
+# Parse and add data to the PDF
+parse_json(data)
 
 # Build the PDF
 pdf.build(story)
 
 print("PDF created successfully!")
-
