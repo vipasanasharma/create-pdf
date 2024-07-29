@@ -40,4 +40,4 @@ parse_json(data)
 # Build the PDF
 pdf.build(story)
 
-print("PDF created successfully!")
+print("PDF created successfully!")BNP Paribas partnered with Mistral AI to leverage their advanced AI technology and promote European innovation in the AI market. Mistral AI offers tailored, scalable solutions particularly suited for regulated industries, which BNP Paribas saw as a strategic advantage. While OpenAI was not explicitly mentioned as being avoided due to BBVA's partnership, BNP Paribas's decision reflects a broader goal to strengthen European AI capabilities and maintain technological independence from U.S. tech giants​ (Datafloq)​​ (Blue Tech Wave Media)​.
